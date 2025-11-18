@@ -18,7 +18,18 @@ if(!$res)
     echo ("successfully inserted" .mysqli_error($conn));
 }
 else{
-    echo"not inserted";
+    $row = mysqli_num_rows($res);
+    if($row > 0 )
+    {
+        echo"Query successfully run";
+        header("location:./index.php");
+
+    }
+    else{
+        echo" query is not running";
+                header("location:./register.php");
+
+    }
 }
 
 
