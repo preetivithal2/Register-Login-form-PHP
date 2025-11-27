@@ -7,12 +7,9 @@
 
    <body>
      <div class="container">
-      <h1 class="text-center my-4">
-         Registration Form
-      </h1>
-      <div>
-         <!-- <form action="" method="post"> -->
-            <!-- <div class="mb-3"> -->
+         <form action="./add-register.php" method="POST">
+             <h1 class="text-center my-4">Registration Form</h1>
+            <div class="mb-3">
                <label for="username" class="form-label">Name:</label>
                <input type="text" placeholder="Enter your name" class="form-control" name="name" >
             </div>
@@ -36,9 +33,9 @@
                <label for="phone" class="form-label">Phone:</label>
                <input type="password" placeholder="Enter your number" class="form-control" name="phone" >
             </div>
-            <button type="submit" placeholder="Enter your name" class="btn btn-primary">Register</button>
-         <!-- </form>
-      </div> -->
-     </div>
+            <button type="submit" placeholder="Enter your name" class="btn btn-primary" name="register">Register</button>
+         </form>
+      </div>
+     
 
 

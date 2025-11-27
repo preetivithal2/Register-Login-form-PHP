@@ -6,7 +6,7 @@ if (isset ($_POST['register'])){
 
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $address = $_POST['Address'];
+    $address = $_POST['address'];
     $password = $_POST['password'];
     $phone = $_POST['phone'];
 

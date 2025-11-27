@@ -41,6 +41,28 @@
      
     </div>
      <form class="d-flex gap-3">
+
+<?php
+
+<?php
+     if(isset($_SESSION['email'])) {
+
+       echo' <button class="btn btn-primary" type="submit"><a href="./logout" class="text-light">Logout</a></button>';
+     }
+else {
+  echo'
+        <button class="btn btn-primary"><a href="./register.php" class="text-light">Register</a></button>
+          <button class="btn btn-primary"><a href="./login.php" class="text-light">Login</a></button>';
+
+}
+          ?>
+?>
+
+
+
+
+
+
         <button class="btn btn-primary"><a href="./register" class="text-light">Register</a></button>
           <button class="btn btn-primary"><a href="./login" class="text-light">Login</a></button>
       </form>
