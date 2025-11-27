@@ -1,8 +1,4 @@
-  <?php 
-  
-  @include('header.php')
-  
-  
+  <?php @include('header.php')
   ?>
 
    <body>
@@ -15,7 +11,7 @@
             </div>
             <div class="mb-3">
                <label for="email" class="form-label">Email:</label>
-               <input type="email" placeholder="Enter your Emaile" class="form-control"name="email" >
+               <input type="email" placeholder="Enter your Email" class="form-control"name="email" >
             </div>  
 
               <div class="mb-3">
@@ -25,15 +21,15 @@
 
             <div class="mb-3">
                <label for="password" class="form-label">Password:</label>
-               <input type="password" placeholder="Enter your name" class="form-control" name="password" >
+               <input type="password" placeholder="Enter your password" class="form-control" name="password" >
             </div>
 
           
               <div class="mb-3">
                <label for="phone" class="form-label">Phone:</label>
-               <input type="password" placeholder="Enter your number" class="form-control" name="phone" >
+               <input type="password" placeholder="Enter phone" class="form-control" name="phone">
             </div>
-            <button type="submit" placeholder="Enter your name" class="btn btn-primary" name="register">Register</button>
+            <button type="submit" class="btn btn-primary" name="register">Register</button>
          </form>
       </div>
      

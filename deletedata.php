@@ -8,7 +8,7 @@ if(isset($_GET['id']))
     $res = mysqli_query($conn , $query);
 
     if(!$res){
-        die("query failed" .mysqli_error($conn));
+        die("query failed" .mysqli_error( $conn));
     }
 
     else{
