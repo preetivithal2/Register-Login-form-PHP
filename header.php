@@ -34,7 +34,7 @@
           <a class="nav-link" href="#">Profiles</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./add-sudent.php">Students</a>
+          <a class="nav-link" href="./add-student.php">Students</a>
         </li>
       
       </ul>
