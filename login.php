@@ -14,17 +14,11 @@
      <input type="text" name="" placeholder="Enter your email" class="form-control">
         </div>
 
-   
-
     <div>
     <label for="">Password :</label>
      <input type="text" name="" placeholder="Enter your password" class="form-control">
 </div>
-
-
-
-
-        <button class="btn btn-primary" name="login">
+     <button class="btn btn-primary" name="login">
             Login
         </button>
 </form>
