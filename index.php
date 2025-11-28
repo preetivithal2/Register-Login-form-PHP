@@ -46,7 +46,7 @@
             <td>$row[batch]</td>
             <td>$row[faculty]</td>
             <td>
-               <button class='btn btn-primary' type ='submit'> <a href='' class='text-black'>Edit</a> </button>
+               <button class='btn btn-primary' type ='submit'> <a href='./update-data.php' class='text-black'>Edit</a> </button>
           <button class='btn btn-danger' type ='submit'> <a href='./delete_data.php?id=$row[id]' class='text-black'>Delete</a></button>
             </td>
          </tr>
