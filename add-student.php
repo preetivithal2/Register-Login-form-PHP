@@ -3,7 +3,7 @@
   ?>
   
      <div class="container mt-5 ">
-<form action="./add-student.php" method="POST">
+<form action="./student_data.php" method="POST">
      <h1 class="text-center">Add-Student</h1>
         <div>
     <label for="">Name :</label>
