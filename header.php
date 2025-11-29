@@ -2,14 +2,12 @@
 <html lang="en">
   <head>
     <title>Title</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <!-- Bootstrap CSS v5.2.1 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -56,14 +54,6 @@ else {
 }
         
 ?>
-
-
-
-
-
-<!-- 
-        <button class="btn btn-primary"><a href="./register" class="text-light">Register</a></button>
-          <button class="btn btn-primary"><a href="./login" class="text-light">Login</a></button> -->
       </form>
   </div>
 </nav>

@@ -1,131 +1,60 @@
-<?php @include('header.php'); ?>
+ <?php 
+  @include('header.php')
+  ?>
 
-<div class="container">
+  <div class="container d-flex justify-content-between mt-5 align-items-center">
         <h2 class="text-center mb-4">Student List</h2>
-        <h2 class="text-center mb-4">Add Student</h2>
+        <h2 class="text-center btn btn-primary"><a href="./add-student.php" class="text-light  text-decoration-none" >Add Student</a></h2>
 
 </div>
 <div class="container mt-5">
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Batch</th>
-      <th scope="col">Faculty</th>
-        <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-         <td>@mdo</td>
-         <td>
-         <!-- Button trigger modal -->
-<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Edit
-</button>
+    <!-- <h2 class="text-center mb-4">Student List</h2> -->
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Batch</th>
+          <th scope="col">Faculty</th>
+          <th scope="col">Action</th>
+        </tr>
+     </thead>
+ <?php
+  
+  @include('db.php');
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Update-record</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <input type="text" placeholder="Name">
-        <input type="text" placeholder="Email">
-        <input type="text" placeholder="Address">
-        <input type="text" placeholder="Password">
-        <input type="text" placeholder="Phone">
-      </div>
-      <div class="modal-footer">
-    <button type="button" class="btn btn-success" data-bs-dismiss="modal">update</button>
-      </div>
-    </div>
-  </div>
-</div>
-          <button class="btn btn-dark">Delete</button>
-         </td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-         <td>@mdo</td>
-              <td>
-             <!-- Button trigger modal -->
-<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Edit
-</button>
+  $query = "SELECT * FROM student";
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Update-record</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <input type="text" placeholder="Name">
-        <input type="text" placeholder="Email">
-        <input type="text" placeholder="Address">
-        <input type="text" placeholder="Password">
-        <input type="text" placeholder="Phone">
-      </div>
-      <div class="modal-footer">
-    <button type="button" class="btn btn-success" data-bs-dismiss="modal">update</button>
-      </div>
-    </div>
-  </div>
-</div>
-          <button class="btn btn-dark">Delete</button>
-         </td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td>@social</td>
-         <td>@mdo</td>
-              <td>
-                <!-- Button trigger modal -->
-<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Edit
-</button>
+  $res= mysqli_query($conn , $query);
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Update-record</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <input type="text" placeholder="Name">
-        <input type="text" placeholder="Email">
-        <input type="text" placeholder="Address">
-        <input type="text" placeholder="Password">
-        <input type="text" placeholder="Phone">
-      </div>
-      <div class="modal-footer">
-    <button type="button" class="btn btn-success" data-bs-dismiss="modal">update</button>
-      </div>
-    </div>
-  </div>
-</div>
-          <button class="btn btn-dark">Delete</button>
-         </td>
-    </tr>
+  if(!$res)
+  {
+    die("Query Failed" . mysqli_error($conn));
+  }
+
+  else
+  {
+ while($row = mysqli_fetch_assoc($res)){
+  echo
+  "
+         <tr>
+            <td>$row[id]</td>
+            <td>$row[name]</td>
+            <td>$row[email]</td>
+            <td>$row[batch]</td>
+            <td>$row[faculty]</td>
+            <td>
+               <button class='btn btn-primary' type ='submit'> <a href='./update-data.php?id=$row[id]' class='text-black'>Edit</a> </button>
+          <button class='btn btn-danger' type ='submit'> <a href='./delete_data.php?id=$row[id]' class='text-black'>Delete</a></button>
+            </td>
+         </tr>
+  ";
+ }
+  }
+  
+  ?>    
   </tbody>
 </table>
+
 </div>

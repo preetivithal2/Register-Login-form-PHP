@@ -8,18 +8,21 @@ if (isset ($_POST['student'])){
     $email = $_POST['email'];
     $batch = $_POST['batch'];
     $faculty = $_POST['faculty'];
-$query = "INSERT INTO `student`( `name`, `email`, `batch`, `faculty`) 
- VALUES 
- ('$name', '$email', '$batch', '$faculty')";
+
+     
+    $query = "INSERT INTO `student`( `name`, `email`, `batch`, `faculty`) 
+    VALUES 
+    ('$name', '$email', '$batch', '$faculty')";
 
 $res = mysqli_query($conn, $query);
-if($res)
-{
-    header('location:./index.php');
-}
-else{
+
+    if($res){
+    header('location:./admin.php');
+    }
+
+    else{
     echo"not inserted";
-}
+    }
 
 }
 ?>
