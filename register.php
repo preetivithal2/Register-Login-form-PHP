@@ -3,7 +3,7 @@
 
    <body>
      <div class="container">
-         <form action="./add-register.php" method="POST">
+         <form action="./add-register.php" method="POST" enctype="multipart/form-data">
              <h1 class="text-center my-4">Registration Form</h1>
             <div class="mb-3">
                <label for="username" class="form-label">Name:</label>
@@ -17,6 +17,11 @@
               <div class="mb-3">
                <label for="address" class="form-label">Address:</label>
                <input type="text" placeholder="Enter your address" class="form-control" name="address" >
+            </div>
+
+             <div class="mb-3">
+               <label for="image" class="form-label">Image:</label>
+               <input type="file" placeholder="Enter your address" class="form-control" name="image" >
             </div>
 
             <div class="mb-3">

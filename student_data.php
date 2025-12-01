@@ -1,5 +1,4 @@
-<?php
-@include('db.php');
+<?php @include('db.php');
 
 
 if (isset ($_POST['student'])){
@@ -14,7 +13,7 @@ if (isset ($_POST['student'])){
     VALUES 
     ('$name', '$email', '$batch', '$faculty')";
 
-$res = mysqli_query($conn, $query);
+    $res = mysqli_query($conn, $query);
 
     if($res){
     header('location:./admin.php');

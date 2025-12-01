@@ -28,7 +28,6 @@ if(isset($_POST['login'])){
     else if($row['user_role'] == "faculty"){
         header("location:./faculty.php");
 
-        // header("location:./index.php");
     } 
     else{
         header("location:./student.php");

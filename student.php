@@ -11,15 +11,13 @@
           <th scope="col">Email</th>
           <th scope="col">Batch</th>
           <th scope="col">Faculty</th>
-          <th scope="col">Action</th>
         </tr>
      </thead>
  <?php
   
   @include('db.php');
 
-  $query = "SELECT * FROM student";
-
+  $query = "SELECT * FROM student WHERE email = '{$_SESSION['email']}';";
   $res= mysqli_query($conn , $query);
 
   if(!$res)
@@ -38,10 +36,7 @@
             <td>$row[email]</td>
             <td>$row[batch]</td>
             <td>$row[faculty]</td>
-            <td>
-               <button class='btn btn-primary' type ='submit'> <a href='./update-data.php?id=$row[id]' class='text-black'>Edit</a> </button>
-          <button class='btn btn-danger' type ='submit'> <a href='./delete_data.php?id=$row[id]' class='text-black'>Delete</a></button>
-            </td>
+         
          </tr>
   ";
  }
